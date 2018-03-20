@@ -1,0 +1,4 @@
+#include <wx/msw/wx.rc>
+
+ApplicationIcon ICON "icon32.ico"
+ICONPRG ICON "icon32.ico"
