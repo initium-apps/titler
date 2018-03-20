@@ -37,3 +37,8 @@ CTestTestfile.cmake
 *.cbp
 *.layout
 *.depend
+
+# Executable outputs on Linux systems
+
+TitlerRelease
+TitlerDebug
