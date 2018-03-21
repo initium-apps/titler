@@ -62,7 +62,8 @@ bool Titler::OnInit() {
     this->mediaPanel = new titBlackPanel(this->splitter);
     this->mediaSizer = new wxBoxSizer(wxVERTICAL);
     this->media = new titMediaCtrl(this->mediaPanel);
-    this->currentSubtitle = new wxStaticText(this->mediaPanel, wxID_ANY, "");
+    this->currentSubtitle = new wxStaticText(this->mediaPanel, wxID_ANY, "", wxDefaultPosition, wxDefaultSize, wxTRANSPARENT_WINDOW);
+	this->currentSubtitle->SetForegroundColour(*wxWHITE);
     this->currentSubtitle->SetFont(this->currentSubtitle->GetFont().MakeLarger().MakeLarger());
     this->mediaSizer->Add(this->media, 1, wxEXPAND | wxGROW, 0);
     this->mediaSizer->Add(this->currentSubtitle, 0, wxALIGN_CENTER_HORIZONTAL, 0);
