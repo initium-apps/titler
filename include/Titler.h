@@ -23,24 +23,24 @@
 
 class Titler : public wxApp {
     private:
-        wxFrame* mainFrame;
-        wxBoxSizer* mainSizer;
+        wxFrame* mainFrame = NULL;
+        wxBoxSizer* mainSizer = NULL;
 
-        titMenuBar* menubar;
+        titMenuBar* menubar = NULL;
 
-        wxSplitterWindow* splitter;
+        wxSplitterWindow* splitter = NULL;
 
-        titBlackPanel* mediaPanel;
-        wxBoxSizer* mediaSizer;
-        titMediaCtrl* media;
-        wxStaticText* currentSubtitle;
+        titBlackPanel* mediaPanel = NULL;
+        wxBoxSizer* mediaSizer = NULL;
+        titMediaCtrl* media = NULL;
+        wxStaticText* currentSubtitle = NULL;
 
-        titTimeline* timeline;
+        titTimeline* timeline = NULL;
 
-        wxFileDialog* openDg;
-        wxFileDialog* saveDg;
+        wxFileDialog* openDg = NULL;
+        wxFileDialog* saveDg = NULL;
 
-        Project* curProj;
+        Project* curProj = NULL;
     public:
         virtual bool OnInit();
         virtual int OnExit();

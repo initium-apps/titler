@@ -13,13 +13,13 @@
 
 class titTimeline : public wxScrolledWindow {
     private:
-        titMediaCtrl* media; // used to pass to the handle in ResetHandle
+        titMediaCtrl* media = NULL; // used to pass to the handle in ResetHandle
 
         void ResetHandle();
     public:
         titHandle* handle = NULL;
         std::vector<titSubtitle*> subs;
-        titSubtitle* nSubtitle;
+        titSubtitle* nSubtitle = NULL;
 
         float zoom = 0.1f;
 
