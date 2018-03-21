@@ -10,8 +10,10 @@ titSubtitle::titSubtitle(titTimeline* timeline, wxTimeSpan start, wxTimeSpan len
     text->listen([this](wxString overriden) {
         this->childText->SetLabel(overriden);
     });
+	
+	this->SetBackgroundColour(wxGREY_BRUSH->GetColour());
 
-    this->childText = new wxStaticText(this, wxID_ANY, text->get());
+    this->childText = new wxStaticText(this, wxID_ANY, text->get(), wxDefaultPosition, wxDefaultSize, wxTRANSPARENT_WINDOW);
     wxBoxSizer* sizer = new wxBoxSizer(wxVERTICAL);
     sizer->Add(this->childText);
     this->SetSizer(sizer);

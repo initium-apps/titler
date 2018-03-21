@@ -1,6 +1,8 @@
 #include "titBlackPanel.h"
 
 titBlackPanel::titBlackPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
+	this->SetBackgroundColour(*wxBLACK);
+
     this->Bind(wxEVT_PAINT, &titBlackPanel::PaintEv, this);
 }
 
