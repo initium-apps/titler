@@ -59,13 +59,15 @@ void Project::Save(wxFileOutputStream& fos, titTimeline* timeline) {
 }
 
 void Project::Open(wxString filename, titTimeline* timeline) {
-    wxFileInputStream fis(filename);
+    if(wxFileExists(filename)) {
+        wxFileInputStream fis(filename);
 
-    SRTParser parser;
-    parser.parse(fis);
+        SRTParser parser;
+        parser.parse(fis);
 
-    std::vector<SRTSub> subs = parser.getSubtitles();
-    for(auto& sub : subs) {
-        timeline->insertSubtitle(sub.start, sub.length, new property<wxString>(sub.text));
+        std::vector<SRTSub> subs = parser.getSubtitles();
+        for(auto& sub : subs) {
+            timeline->insertSubtitle(sub.start, sub.length, new property<wxString>(sub.text));
+        }
     }
 }
